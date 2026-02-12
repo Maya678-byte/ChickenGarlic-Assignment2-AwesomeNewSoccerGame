@@ -7,6 +7,7 @@ public class EnemyX : MonoBehaviour
     public float speed;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+    //make it public then drag and drop playerGoal game object into enemy prefab
 
     // Start is called before the first frame update
     void Start()
