@@ -13,6 +13,7 @@ public class EnemyX : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        playerGoal = GameObject.Find("Player Goal");
     }
 
     // Update is called once per frame
@@ -27,15 +28,10 @@ public class EnemyX : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         // If enemy collides with either goal, destroy it
-        if (other.gameObject.name == "Enemy Goal")
+        if (other.gameObject.name == "Enemy Goal"|| other.gameObject.name == "Player Goal")
         {
             Destroy(gameObject);
         } 
-        else if (other.gameObject.name == "Player Goal")
-        {
-            Destroy(gameObject);
-        }
-
     }
 
 }
