@@ -7,6 +7,7 @@ public class EnemyX : MonoBehaviour
     public float speed;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+    private SpawnManagerX spawnManagerXScript;
     //make it public then drag and drop playerGoal game object into enemy prefab
 
     // Start is called before the first frame update
@@ -14,6 +15,9 @@ public class EnemyX : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player Goal");
+        spawnManagerXScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManagerX>();
+        speed = spawnManagerXScript.enemySpeed;
+
     }
 
     // Update is called once per frame
